@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Abinesh, a web developer and designer specializing in responsive websites.">
+    <title>ABINESH - Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Optional: Add Google Fonts or icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ABINESH</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1 style="text-align: center;">Hello, I'm ABINESH</h1>  <!-- Name centered via inline style -->
+            <p>Web Developer | Designer | Creative Thinker</p>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+        <!-- Hero image removed -->
+    </section>
+
+    <!-- Rest of the HTML remains the same as before -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a passionate web developer with 5+ years of experience creating responsive, user-friendly websites. I specialize in HTML, CSS, JavaScript, and modern frameworks. When I'm not coding, I enjoy hiking and photography.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>HTML & CSS</h3>
+                    <p>Expert in semantic markup and responsive design.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <p>Proficient in ES6+, React, and Node.js.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive interfaces with tools like Figma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="project">
+                    <!-- Image removed -->
+                    <h3>Project Title 1</h3>
+                    <p>Description of the project.</p>
+                    <a href="#" class="btn" target="_blank" rel="noopener">View Live</a>
+                </div>
+                <div class="project">
+                    <!-- Image removed -->
+                    <h3>Project Title 2</h3>
+                    <p>Description of the project.</p>
+                    <a href="#" class="btn" target="_blank" rel="noopener">View Live</a>
+                </div>
+                <div class="project">
+                    <!-- Image removed -->
+                    <h3>Project Title 3</h3>
+                    <p>Description of the project.</p>
+                    <a href="#" class="btn" target="_blank" rel="noopener">View Live</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <!-- Replace with a form handler like Formspree (e.g., action="https://formspree.io/your-email") -->
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <label for="name" class="sr-only">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required aria-describedby="name-error">
+                <span id="name-error" class="error" aria-live="polite"></span>
+
+                <label for="email" class="sr-only">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required aria-describedby="email-error">
+                <span id="email-error" class="error" aria-live="polite"></span>
+
+                <label for="message" class="sr-only">Your Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required aria-describedby="message-error"></textarea>
+                <span id="message-error" class="error" aria-live="polite"></span>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ABINESH. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle with accessibility
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Basic form validation (enhance as needed)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            // Add custom validation here if using a handler
+            console.log('Form submitted');
+        });
+    </script>
+</body>
+</html>
